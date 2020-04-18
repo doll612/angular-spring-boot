@@ -1,6 +1,65 @@
-<div class="row">
-  row 1
+<div class="row pt-2 search-gd">
+    <div class="col">
+        <form [formGroup]="employeeSearchForm" (submit)="searchEmployees()">
+            <div class="row">
+                <div class="col-sm form-group">
+                    <label for="employeeId">Employee Id</label>
+                    <input formControlName="employeeId" id="employeeId" class="form-control" />
+                </div>
+                <div class="col-sm form-group">
+                    <label for="firstName">First Name</label>
+                    <input formControlName="firstName" id="firstName" class="form-control" />
+                </div>
+                <div class="col-sm form-group">
+                    <label for="lastName">Last Name</label>
+                    <input formControlName="lastName" id="lastName" class="form-control" />
+                </div>
+                <div class="col-sm form-group">
+                    <label for="email" class="wi">Email</label>
+                    <input formControlName="email" id="email" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm form-group">
+                    <label for="hireDate" class="wi">Hire Date</label>
+                    <div class="input-container">
+                        <input class="input-field form-control" placeholder="Date:" [(ngModel)]="hireDate"
+                            [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" placeholder="Date Time"
+                            formControlName="hireDate" id="hireDate">
+                        <i [owlDateTimeTrigger]="dt1" class="fa fa-calendar icon"></i>
+                        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                    </div>
+
+
+                </div>
+                <div class="col-sm form-group">
+                    <label for="gender" class="wi">Gender</label>
+
+                    <ng-select formControlName="gender" id="gender" class="" [items]="genderList" bindLabel="key"
+                        autofocus bindValue="value">
+                    </ng-select>
+                </div>
+
+                <div class="col-sm ">
+                    <label for="gender"></label>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm">
+                    <!-- <label for="gender"></label>
+                    <button type="submit">Submit</button> -->
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 <div class="row">
-   row 2
+    <div class="col">
+        1 of 3
+    </div>
+    <div class="col">
+        2 of 3
+    </div>
+    <div class="col">
+        3 of 3
+    </div>
 </div>

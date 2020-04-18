@@ -33,3 +33,11 @@ ng add @angular/localize
 npm install bootstrap
 
 npm install @ng-bootstrap/ng-bootstrap
+
+npm i ng-pick-datetime
+
+npm install @angular/cdk
+
+npm install font-awesome --save
+
+npm install --save @ng-select/ng-select
