@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { EmployeeService } from '../services/employee.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class SearchPageComponent implements OnInit {
   employeeSearchForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService) { }
 
   genderList = [{ key: 'Female', value: "F" }, { key: 'Male', value: "M" }];
   hireDate: any;
@@ -27,5 +28,13 @@ export class SearchPageComponent implements OnInit {
 
   searchEmployees() {
     console.log("employee search params : ", this.employeeSearchForm.value);
+    this.employeeService.filterEmployees(this.employeeSearchForm.value).subscribe(
+      result => {
+        console.log('result emp list : ', result['empList']);
+        console.log('result count : ', result['totalEmps']);
+      },
+      error => {
+        console.log('error while filter emp list : ', error);
+      })
   }
 }

@@ -12,6 +12,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageOneComponent } from './page-one/page-one.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     OwlDateTimeModule, OwlNativeDateTimeModule,
     BrowserAnimationsModule,
-    NgSelectModule
+    NgSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
